@@ -12,6 +12,20 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.+'
-    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.+'
+    implementation(
+            'org.javamoney.moneta:moneta-core:1.+'
+    )
+
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter-api:5.+',
+            'org.assertj:assertj-core:3.+'
+    )
+
+    testRuntimeOnly(
+            'org.junit.jupiter:junit-jupiter-engine:5.+'
+    )
+}
+
+test {
+    useJUnitPlatform()
 }
