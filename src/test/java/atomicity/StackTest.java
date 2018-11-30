@@ -10,8 +10,8 @@ class StackTest {
     void atomicity() {
         Stack<String> stack = new Stack<>();
 
-        assertThatThrownBy(stack::pop);
-        assertThatThrownBy(stack::pop);
+        assertThatThrownBy(stack::pop).isInstanceOf(IndexOutOfBoundsException.class);
+        assertThatThrownBy(stack::pop).isInstanceOf(IndexOutOfBoundsException.class);
 
         stack.push("test");
     }
