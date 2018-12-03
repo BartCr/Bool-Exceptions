@@ -1,25 +1,13 @@
-package ventouris;
+package ventouris_integration;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ventouris.util.Locator;
+import ventouris.MyCoolService;
 
 import java.util.Arrays;
 import java.util.List;
 
-class MyCoolServiceTest {
-
-    @BeforeEach
-    void setUp() {
-        Locator.setRunningInTest(true);
-    }
-
-    @AfterEach
-    void tearDown() {
-        Locator.setRunningInTest(false);
-    }
+class MyCoolServiceIntegrationTest {
 
     @Test
     void doTest() {

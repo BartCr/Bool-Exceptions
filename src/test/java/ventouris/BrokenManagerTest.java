@@ -1,9 +1,11 @@
 package ventouris;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ventouris.exception.CustomException;
+import ventouris.util.Locator;
 
 import static ventouris.util.Locator.locate;
 
@@ -13,7 +15,13 @@ class BrokenManagerTest {
 
     @BeforeEach
     void setUp() {
+        Locator.setRunningInTest(true);
         brokenManager = locate(BrokenManager.class);
+    }
+
+    @AfterEach
+    void tearDown() {
+        Locator.setRunningInTest(false);
     }
 
     @Test
